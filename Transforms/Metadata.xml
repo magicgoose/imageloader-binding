@@ -1,0 +1,10 @@
+﻿<metadata>
+
+<!--  Remove some problematic pieces that are not accessed anyway-->
+
+<remove-node path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']" />
+<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.DescendingItr']" />
+<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.Itr']" />
+<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.imageaware']/class[@name='ImageViewAware']" />
+
+</metadata>
