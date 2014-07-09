@@ -1,10 +1,14 @@
 ﻿<metadata>
+<!-- Remove some problematic pieces that are not accessed anyway -->
+	<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.DescendingItr']" />
+	<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.Itr']" />
+	<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.imageaware']/class[@name='ImageViewAware']" />
 
-<!--  Remove some problematic pieces that are not accessed anyway-->
+	<remove-node path="/api/package[@name='com.nostra13.universalimageloader.cache.memory']/interface[@name='MemoryCacheAware']/method[@name='keys' and count(parameter)=0]" />
 
-<remove-node path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']" />
-<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.DescendingItr']" />
-<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.assist.deque']/class[@name='LinkedBlockingDeque.Itr']" />
-<remove-node path="/api/package[@name='com.nostra13.universalimageloader.core.imageaware']/class[@name='ImageViewAware']" />
-
+<!-- C# can't covariance -->
+	<attr path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']/class[@name='FIFOLimitedMemoryCache']/method[@name='removeNext' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']/class[@name='LRULimitedMemoryCache']/method[@name='removeNext' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']/class[@name='LargestLimitedMemoryCache']/method[@name='removeNext' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.nostra13.universalimageloader.cache.memory.impl']/class[@name='UsingFreqLimitedMemoryCache']/method[@name='removeNext' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
 </metadata>

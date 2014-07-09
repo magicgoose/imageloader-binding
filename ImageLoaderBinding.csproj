@@ -41,6 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Additions\FIFOLimitedMemoryCache.cs" />
+    <Compile Include="Additions\LRULimitedMemoryCache.cs" />
+    <Compile Include="Additions\LargestLimitedMemoryCache.cs" />
+    <Compile Include="Additions\LruMemoryCache.cs" />
+    <Compile Include="Additions\UsingFreqLimitedMemoryCache.cs" />
+    <Compile Include="Additions\WeakMemoryCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
